@@ -22,7 +22,7 @@ export default function Results() {
 
     const fetchEvaluation = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/interview/evaluate', {
+        const res = await fetch('https://ai-mock-interview-v2.onrender.com/api/interview/evaluate', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ questionsAndAnswers: qaHistory })
@@ -32,7 +32,7 @@ export default function Results() {
 
         // Save session if user is logged in
         if (user && data.scores) {
-          await fetch('http://localhost:5000/api/interview/save-session', {
+          await fetch('https://ai-mock-interview-v2.onrender.com/api/interview/save-session', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

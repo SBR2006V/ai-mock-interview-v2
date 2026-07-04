@@ -54,7 +54,7 @@ export default function InterviewSession() {
   const generateNextQuestion = async (previousAnswer = '') => {
     setIsGenerating(true);
     try {
-      const res = await fetch('http://localhost:5000/api/interview/generate-question', {
+      const res = await fetch('https://ai-mock-interview-v2.onrender.com/api/interview/generate-question', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role, resumeText, previousAnswer })

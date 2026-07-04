@@ -10,7 +10,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (user) {
-      fetch(`import.meta.env.https://ai-mock-interview-v2.onrender.com/api/interview/history/${user.id}`)
+      fetch(`${import.meta.env.VITE_API_URL}/api/interview/history/${user.id}`)
         .then(res => res.json())
         .then(data => {
           if (data.sessions) setHistory(data.sessions);
